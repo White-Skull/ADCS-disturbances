@@ -1,0 +1,37 @@
+
+"""
+Mercury polar-orbit spacecraft attitude simulation
+===================================================
+
+Simulates the spacecraft's attitude deviation from nominal LVLH attitude
+over one complete orbit.
+
+Alternatively, with LIMIT_CHECK_MODE enabled, the simulation runs until the
+attitude deviation AND the angular velocity both exceed their allowed
+limits, continues for a short overrun time, and then stops.
+
+Assumptions
+-----------
+1. Circular polar orbit around Mercury.
+2. Attitude motion is restricted to ONE rotational axis / plane.
+3. Small-angle approximation is used.
+4. Spacecraft is a rigid body with a specified moment of inertia.
+5. Disturbances are represented as torques.
+6. Disturbance torques can be constant, sinusoidal, or arbitrary functions.
+7. The nominal attitude is LVLH; theta = 0 means perfect LVLH pointing.
+8. Gravity-gradient torque is modeled approximately as a restoring torque.
+9. No active attitude-control system is included in this basic model.
+
+Outputs
+-------
+- Attitude deviation from LVLH [deg]
+- Angular acceleration [deg/s^2]
+- Individual disturbance torques [N m]
+- Angular velocity [deg/s]
+
+Dependencies
+------------
+numpy
+scipy
+matplotlib
+"""
